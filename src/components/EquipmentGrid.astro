@@ -1,0 +1,49 @@
+---
+/**
+ * EQUIPMENT GRID COMPONENT
+ * Displays a list of available rental items.
+ * Fixed: Buttons are now perfectly aligned at the bottom of each card.
+ * Follows Golden Rules: clean code, English comments.
+ */
+
+const equipment = [
+  { name: "Traktorek Kosiarka", price4h: "150", price24h: "250", deposit: "500" },
+  { name: "Glebogryzarka", price4h: "80", price24h: "150", deposit: "300" },
+  { name: "Niszczarka", price4h: "100", price24h: "180", deposit: "400" },
+  { name: "Piła Łańcuchowa", price4h: "50", price24h: "90", deposit: "200" },
+];
+---
+
+<section id="oferta" class="py-20 px-6 max-w-6xl mx-auto">
+  <h2 class="text-4xl font-black text-luko-yellow uppercase mb-12 text-center italic">
+    Nasza Oferta
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {equipment.map((item) => (
+      /* FIX: Added 'flex flex-col' to the card container. 
+         This allows us to use 'mt-auto' on the button to pin it to the bottom.
+      */
+      <div class="flex flex-col bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-luko-yellow transition-all duration-300 group">
+        
+        <div class="flex-grow">
+          <h3 class="text-2xl font-bold mb-4 min-h-[4rem]">{item.name}</h3>
+          
+          <div class="space-y-2 text-sm opacity-80 mb-6">
+            <p class="flex justify-between">Cena do 4h: <span class="text-luko-yellow font-bold">{item.price4h} zł</span></p>
+            <p class="flex justify-between">Cena za dobę: <span class="text-luko-yellow font-bold">{item.price24h} zł</span></p>
+            <hr class="border-white/10 my-2" />
+            <p class="flex justify-between italic">Kaucja: <span>{item.deposit} zł</span></p>
+          </div>
+        </div>
+
+        <a href={`https://wa.me/48537782397?text=Dzień dobry, chciałbym zarezerwować sprzęt: ${item.name}`}
+            target="_blank"
+            class="w-full mt-auto py-3 rounded-lg bg-luko-yellow text-luko-green font-black uppercase text-xs tracking-widest text-center group-hover:bg-white transition-colors duration-300"
+          >
+            Zarezerwuj przez WhatsApp
+          </a>
+      </div>
+    ))}
+  </div>
+</section>

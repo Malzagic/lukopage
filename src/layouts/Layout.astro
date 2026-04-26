@@ -1,0 +1,31 @@
+---
+/**
+ * LAYOUT COMPONENT
+ * Main wrapper for the website. Imports global styles and sets SEO metadata.
+ * Follows Golden Rules: clean, safe, English comments.
+ */
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "LuKo - Wynajem Sprzętu Ogrodniczego", 
+  description = "Profesjonalny wynajem sprzętu ogrodniczego w Pyrzycach. Traktorki, glebogryzarki, piły i wiele więcej." 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen">
+    <slot /> </body>
+</html>
