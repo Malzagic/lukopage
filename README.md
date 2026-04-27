@@ -74,5 +74,5 @@ This project was developed as a real-world implementation for a local business i
 
 ---
 
-**Author:** [Your Name/GitHub Profile]  
+**Author:** [github.com/Malzagic](https://github.com/Malzagic)
 **Client:** LuKo - Serwis i Wynajem
