@@ -7,10 +7,14 @@
  */
 
 const equipment = [
-  { name: "Traktorek Kosiarka", price4h: "150", price24h: "250", deposit: "500" },
-  { name: "Glebogryzarka", price4h: "80", price24h: "150", deposit: "300" },
-  { name: "Niszczarka", price4h: "100", price24h: "180", deposit: "400" },
-  { name: "Piła Łańcuchowa", price4h: "50", price24h: "90", deposit: "200" },
+  { name: "Traktorek Kosiarka", price4h: "150", price24h: "250", deposit: "1200" },
+  { name: "Glebogryzarka", price4h: "150", price24h: "250", deposit: "500" },
+  { name: "Rozdrabniacz Spalinowy", price4h: "150", price24h: "250", deposit: "500" },
+  { name: "Wertykulator", price4h: "100", price24h: "150", deposit: "500" },
+  { name: "Myjka ciśnieniowa", price4h: "100", price24h: "150", deposit: "300" },
+  { name: "Przyczepka platforma", price4h: "60", price24h: "100", deposit: "300" },
+  { name: "Okrzesywarka", price4h: "50", price24h: "100", deposit: "200" },
+  { name: "Podkaszarka Spalinowa", price4h: "60", price24h: "100", deposit: "300" },
 ];
 ---
 
@@ -45,5 +49,21 @@ const equipment = [
           </a>
       </div>
     ))}
+  </div>
+  <div class="mt-12 text-center">
+    <h3 class="text-xl font-bold text-luko-yellow">
+      ...oraz więcej sprzętu pod numerem: <button 
+        class="call-trigger text-xl md:text-xl font-black text-luko-yellow hover:scale-105 transition-transform duration-300 cursor-pointer outline-none"
+      >
+        tel. 537-782-397
+      </button>
+    </h3>
+    <p class="mt-2">świadczymy również usługi serwisowe, transport do klienta, wynajem sprzętu z operatorem...</p>
+    <a href="https://www.facebook.com/profile.php?id=61588642397746" target="_blank" class="inline-flex items-center gap-2 mt-4 text-luko-yellow hover:text-white transition-colors duration-300 font-bold drop-shadow-md">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#1877F2">
+        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+      </svg>
+      Facebook: LuKo - Serwis i Wynajem
+    </a>
   </div>
 </section>

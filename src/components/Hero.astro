@@ -6,8 +6,36 @@
  * 2. Contact Overlay (Confirmation Modal) for phone calls.
  * 3. Mobile-friendly "tel:" integration.
  */
+
+import traktorekImg from '../assets/pictures/traktorek.png';
+import glebogryzarkaImg from '../assets/pictures/glebogryzarka.png';
+import rozdrabniaczImg from '../assets/pictures/rozdrabniacz.png';
+import pilaImg from '../assets/pictures/pilalancuchowa.png';
 ---
 <section class="relative w-full min-h-screen flex flex-col items-center justify-center p-6 text-center overflow-hidden">
+
+   <!-- DECORATIVE EQUIPMENT IMAGES - Floating around the text -->
+  <div class="absolute inset-0 pointer-events-none select-none overflow-hidden opacity-70">
+    <!-- Top Left: Traktorek -->
+    <div class="absolute top-[5%] -left-10 sm:left-0 md:left-[-5%] lg:left-[-8%] xl:left-[8%] animate-float">
+      <img src={traktorekImg.src} alt="" class="w-35 sm:w-48 md:w-50 lg:w-96 xl:w-112 -rotate-12 drop-shadow-2xl" />
+    </div>
+    
+    <!-- Top Right: Glebogryzarka -->
+    <div class="absolute top-[5%] -right-10 sm:right-0 md:right-[-5%] lg:right-[-8%] xl:right-[8%] animate-float" style="animation-delay: 0.7s">
+      <img src={glebogryzarkaImg.src} alt="" class="w-35 sm:w-40 md:w-50 lg:w-80 xl:w-96 rotate-12 drop-shadow-2xl" />
+    </div>
+
+    <!-- Bottom Left: Rozdrabniacz -->
+    <div class="absolute bottom-[5%] -left-10 sm:left-[2%] md:left-[-5%] lg:left-[-8%] xl:left-[8%] animate-float" style="animation-delay: 1.4s">
+      <img src={rozdrabniaczImg.src} alt="" class="w-35 sm:w-36 md:w-50 lg:w-72 xl:w-96 rotate-6 drop-shadow-2xl" />
+    </div>
+
+    <!-- Bottom Right: Pila Lancuchowa -->
+    <div class="absolute bottom-[5%] -right-10 sm:right-[2%] md:right-[-5%] lg:right-[-8%] xl:right-[8%] animate-float" style="animation-delay: 2.1s">
+      <img src={pilaImg.src} alt="" class="w-35 sm:w-44 md:w-50 lg:w-80 -rotate-6 drop-shadow-2xl" />
+    </div>
+  </div>
   
   <div class="max-w-4xl mx-auto z-10 relative">
     <h1 class="text-8xl md:text-[14rem] font-black text-luko-yellow italic tracking-tighter leading-none drop-shadow-2xl">
@@ -20,8 +48,7 @@
 
     <div class="flex flex-col gap-6 items-center">
       <button 
-        id="call-trigger"
-        class="text-4xl md:text-6xl font-black text-luko-yellow hover:scale-105 transition-transform duration-300 cursor-pointer outline-none"
+        class="call-trigger text-4xl md:text-6xl font-black text-luko-yellow hover:scale-105 transition-transform duration-300 cursor-pointer outline-none"
       >
         tel. 537-782-397
       </button>
@@ -30,6 +57,14 @@
         Ul. Staromiejska 33 <br />
         74-200 Pyrzyce
       </address>
+      <div class="mt-2 text-center">
+        <a href="https://www.facebook.com/profile.php?id=61588642397746" target="_blank" class="inline-flex items-center gap-2 mt-4 text-luko-yellow hover:text-white transition-colors duration-300 font-bold drop-shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#1877F2">
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+              </svg>
+              Facebook: LuKo - Serwis i Wynajem
+            </a>
+      </div>  
     </div>
   </div>
 
@@ -72,14 +107,16 @@
    * CLIENT-SIDE SCRIPT
    * Handles modal visibility toggle.
    */
-  const trigger = document.getElementById('call-trigger');
+  const triggers = document.querySelectorAll('.call-trigger');
   const overlay = document.getElementById('contact-overlay');
   const closeBtn = document.getElementById('close-overlay');
 
-  // Show overlay
-  trigger?.addEventListener('click', () => {
-    overlay?.classList.remove('hidden');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+  // Show overlay for all triggers
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      overlay?.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; 
+    });
   });
 
   // Hide overlay

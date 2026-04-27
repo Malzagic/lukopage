@@ -2,8 +2,8 @@
 
 /* Define LuKo brand colors using Tailwind v4 @theme */
 @theme {
-  --color-luko-green: #074227;
-  --color-luko-yellow: #f3e300;
+  --color-luko-green: #065a1fff;
+  --color-luko-yellow: #ffde00;
 
   /* Adding a custom font if you want later */
   --font-brand: "Inter", ui-sans-serif, system-ui;
