@@ -7,6 +7,7 @@
  * 3. Mobile-friendly "tel:" integration.
  */
 
+import { Image } from 'astro:assets';
 import traktorekImg from '../assets/pictures/traktorek.png';
 import glebogryzarkaImg from '../assets/pictures/glebogryzarka.png';
 import rozdrabniaczImg from '../assets/pictures/rozdrabniacz.png';
@@ -18,22 +19,48 @@ import pilaImg from '../assets/pictures/pilalancuchowa.png';
   <div class="absolute inset-0 pointer-events-none select-none overflow-hidden opacity-70">
     <!-- Top Left: Traktorek -->
     <div class="absolute top-[5%] -left-10 sm:left-0 md:left-[-5%] lg:left-[-8%] xl:left-[8%] animate-float">
-      <img src={traktorekImg.src} alt="" class="w-35 sm:w-48 md:w-50 lg:w-96 xl:w-112 -rotate-12 drop-shadow-2xl" />
+      <Image 
+        src={traktorekImg} 
+        alt="Traktorek kosiarka" 
+        width={450}
+        loading="eager" 
+        fetchpriority="high"
+        class="w-35 sm:w-48 md:w-50 lg:w-96 xl:w-112 -rotate-12 drop-shadow-2xl" 
+      />
     </div>
     
     <!-- Top Right: Glebogryzarka -->
     <div class="absolute top-[5%] -right-10 sm:right-0 md:right-[-5%] lg:right-[-8%] xl:right-[8%] animate-float" style="animation-delay: 0.7s">
-      <img src={glebogryzarkaImg.src} alt="" class="w-35 sm:w-40 md:w-50 lg:w-80 xl:w-96 rotate-12 drop-shadow-2xl" />
+      <Image 
+        src={glebogryzarkaImg} 
+        alt="Glebogryzarka spalinowa" 
+        width={400}
+        loading="eager" 
+        fetchpriority="high"
+        class="w-35 sm:w-40 md:w-50 lg:w-80 xl:w-96 rotate-12 drop-shadow-2xl" 
+      />
     </div>
 
     <!-- Bottom Left: Rozdrabniacz -->
     <div class="absolute bottom-[5%] -left-10 sm:left-[2%] md:left-[-5%] lg:left-[-8%] xl:left-[8%] animate-float" style="animation-delay: 1.4s">
-      <img src={rozdrabniaczImg.src} alt="" class="w-35 sm:w-36 md:w-50 lg:w-72 xl:w-96 rotate-6 drop-shadow-2xl" />
+      <Image 
+        src={rozdrabniaczImg} 
+        alt="Rozdrabniacz do gałęzi" 
+        width={400}
+        loading="eager" 
+        class="w-35 sm:w-36 md:w-50 lg:w-72 xl:w-96 rotate-6 drop-shadow-2xl" 
+      />
     </div>
 
     <!-- Bottom Right: Pila Lancuchowa -->
     <div class="absolute bottom-[5%] -right-10 sm:right-[2%] md:right-[-5%] lg:right-[-8%] xl:right-[8%] animate-float" style="animation-delay: 2.1s">
-      <img src={pilaImg.src} alt="" class="w-35 sm:w-44 md:w-50 lg:w-80 -rotate-6 drop-shadow-2xl" />
+      <Image 
+        src={pilaImg} 
+        alt="Piła łańcuchowa" 
+        width={350}
+        loading="eager" 
+        class="w-35 sm:w-44 md:w-50 lg:w-80 -rotate-6 drop-shadow-2xl" 
+      />
     </div>
   </div>
   
