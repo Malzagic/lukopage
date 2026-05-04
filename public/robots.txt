@@ -1,0 +1,4 @@
+# Basic robots.txt to allow all crawlers and point to sitemap
+User-agent: *
+Allow: /
+Sitemap: https://luko-wynajem.pl/sitemap-index.xml
